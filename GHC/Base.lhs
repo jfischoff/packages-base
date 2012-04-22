@@ -123,7 +123,6 @@ import GHC.Integer ()
 
 infixr 9  .
 infixr 5  ++
-infixl 4  <$
 infixl 1  >>, >>=
 infixr 0  $
 
@@ -174,7 +173,7 @@ Instances of 'Functor' should satisfy the following laws:
 The instances of 'Functor' for lists, 'Data.Maybe.Maybe' and 'System.IO.IO'
 satisfy these laws.
 -}
-
+{-
 class  Functor f  where
     fmap        :: (a -> b) -> f a -> f b
 
@@ -183,7 +182,7 @@ class  Functor f  where
     -- overridden with a more efficient version.
     (<$)        :: a -> f b -> f a
     (<$)        =  fmap . const
-
+-}
 {- | The 'Monad' class defines the basic operations over a /monad/,
 a concept from a branch of mathematics known as /category theory/.
 From the perspective of a Haskell programmer, however, it is best to
