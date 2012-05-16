@@ -125,9 +125,9 @@ AC_DEFUN([FPTOOLS_CHECK_HTYPE_ELSE],[
     AC_MSG_CHECKING(Haskell type for $1)
     AC_CACHE_VAL(AC_CV_NAME,[
         AC_CV_NAME_supported=yes
-        FP_COMPUTE_INT([HTYPE_IS_INTEGRAL],
-                       [(($1)((int)(($1)1.4))) == (($1)1.4)],
-                       [FPTOOLS_HTYPE_INCLUDES],[AC_CV_NAME_supported=no])
+        HTYPE_IS_INTEGRAL=1
+        if test "$1" = "float" ; then HTYPE_IS_INTEGRAL=0; fi
+        if test "$1" = "double" ; then HTYPE_IS_INTEGRAL=0; fi
         if test "$AC_CV_NAME_supported" = "yes"
         then
             if test "$HTYPE_IS_INTEGRAL" -eq 0

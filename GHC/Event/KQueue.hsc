@@ -221,10 +221,10 @@ newtype Flag = Flag Word16
 newtype Filter = Filter Word16
     deriving (Bits, Eq, Num, Show, Storable)
 
-#{enum Filter, Filter
- , filterRead   = EVFILT_READ
- , filterWrite  = EVFILT_WRITE
- }
+filterRead    :: Filter
+filterRead    = Filter (-1)
+filterWrite   :: Filter
+filterWrite   = Filter (-2)
 
 data TimeSpec = TimeSpec {
       tv_sec  :: {-# UNPACK #-} !CTime

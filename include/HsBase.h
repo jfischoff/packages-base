@@ -541,7 +541,7 @@ INLINE int __hscore_open(char *file, int how, mode_t mode) {
 }
 #endif
 
-#if darwin_HOST_OS
+#if 0
 // You should not access _environ directly on Darwin in a bundle/shared library.
 // See #2458 and http://developer.apple.com/library/mac/#documentation/Darwin/Reference/ManPages/man7/environ.7.html
 #include <crt_externs.h>
